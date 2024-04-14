@@ -1,4 +1,5 @@
 const cloudImg = "https://a.hecdn.net/img/common/icon/202106d/153.png";
+
 const thunderstormImg =
   "https://images.pexels.com/photos/1162251/pexels-photo-1162251.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
 const rainImg =
@@ -9,7 +10,8 @@ const clearSkyImg =
 
 const sunnyImg =
   "https://images.pexels.com/photos/296234/pexels-photo-296234.jpeg?auto=compress&cs=tinysrgb&w=600";
-function setWeatherImage(weather: string) {
+
+const getWeatherImage = (weather: string) => {
   switch (weather) {
     case "Clouds":
       return cloudImg;
@@ -27,6 +29,6 @@ function setWeatherImage(weather: string) {
     default:
       return clearSkyImg;
   }
-}
+};
 
-export default setWeatherImage;
+export default getWeatherImage;

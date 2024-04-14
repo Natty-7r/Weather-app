@@ -2,7 +2,7 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 
-import React, { use, useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import formatDate from "@/utils/constant/date";
 import CurrentWeatherDetailCard from "@/components/card/current-weather-detail-card";
 import WeatherForecastCard from "@/components/card/weather-forecast-card";
@@ -14,8 +14,8 @@ import {
 import { OnPageLoader } from "@/components/loader/on-page-loader";
 import { PageErrorMsg } from "@/components/card/error-msg-card";
 import { ImageCard } from "@/components/card/image-card";
-import setBackgroundColor from "@/utils/constant/set-background-color";
-import setWeatherImage from "@/utils/constant/set-weather-image";
+import getBackgroundColor from "@/utils/constant/background-color";
+import getWeatherImage from "@/utils/constant/image";
 
 function WeatherPage() {
   const param = useSearchParams();
@@ -23,7 +23,10 @@ function WeatherPage() {
   const lon = param.get("long");
   const date = formatDate(Date.now() as any);
   const router = useRouter();
-  const { data, error, isLoading, isError } = useFetchCurrentWeatherQuery();
+  const { data, error, isLoading, isError } = useFetchCurrentWeatherQuery(
+    lat,
+    lon
+  );
 
   const {
     data: forecastData,
@@ -59,8 +62,8 @@ function WeatherPage() {
       />
     );
 
-  const backgroundColor = setBackgroundColor(data?.weather[0].main);
-  const imgSrc = setWeatherImage(data?.weather[0].main);
+  const backgroundColor = getBackgroundColor(data?.weather[0].main);
+  const imgSrc = getWeatherImage(data?.weather[0].main);
 
   if (data && forecastData)
     return (

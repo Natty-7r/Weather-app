@@ -10,10 +10,7 @@ export const useFetchCiteisQuery = () =>
     queryFn: fetchCities,
   });
 
-export const useFetchCurrentWeatherQuery = () => {
-  const param = useSearchParams();
-  const lat = param.get("lat");
-  const lon = param.get("long");
+export const useFetchCurrentWeatherQuery = (lat: any, lon: any) => {
   return useQuery({
     queryKey: ["Current Weather"],
     queryFn: () => fetchCurrentWeatherData(lat, lon),

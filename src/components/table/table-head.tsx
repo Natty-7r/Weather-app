@@ -12,7 +12,7 @@ export function CustomeTableHead({
   const [filter, setFilter] = useState(false);
   const {} = useContext(AppContext);
   return (
-    <TableHead className=" items-start h-full flex flex-col text-blue-950 font-bold  w-[30%] text-sm sm:base">
+    <TableHead className=" items-start h-full flex flex-col text-blue-950 font-bold  w-[30%] text-sm sm:text-lg">
       <div className="capitalize  flex items-center gap-2  ">
         {columnDisplayName || columnName}
         <TableHeaderCellDropDownMenu

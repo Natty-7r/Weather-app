@@ -1,11 +1,10 @@
 import formatDate from "@/utils/constant/date";
 import React from "react";
 import { ImageCard } from "./image-card";
-import { getImageUrl } from "@/utils/constant/image";
-import setWeatherImage from "@/utils/constant/set-weather-image";
+import getWeatherImage from "@/utils/constant/image";
 
 function WeatherForecastCard({ data }: { data: any }) {
-  const imageUrl = setWeatherImage(data?.weather[0].main);
+  const imageUrl = getWeatherImage(data?.weather[0].main);
   return (
     <div className="bg-[#a0a6b419] p-4 rounded-md">
       <p className="text-white text-center">{formatDate(data.dt_txt)}</p>

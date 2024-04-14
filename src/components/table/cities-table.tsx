@@ -59,7 +59,7 @@ const CitiesTable = ({ cities }: CityTableProps) => {
   ]);
 
   return (
-    <Table className="w-full relative hideable_thin_scrollbar">
+    <Table className="w-full relative ">
       <TableHeader className="flex  py-3 sticky top-0 bg-card">
         <TableRow className="w-full h-auto flex items-center  justify-between ">
           <CustomeTableHead columnName="name" columnDisplayName="city " />
@@ -74,7 +74,7 @@ const CitiesTable = ({ cities }: CityTableProps) => {
         {citiesFiltered.map((city) => (
           <TableRow
             key={city.name}
-            className="w-full h-auto flex items-center  justify-between text-xs sm:base  "
+            className="w-full h-auto flex items-center  justify-between text-xs sm:text-base   "
           >
             <TableCell
               className="font-medium  w-[30%] hover:font-bold cursor-pointer"

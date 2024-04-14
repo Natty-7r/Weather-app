@@ -1,6 +1,6 @@
 ## To run the app
 
-# ensure to have next js node version 20 or above
+# make sure to have next js node version 20 or above
 
 First, run the development server:
 
